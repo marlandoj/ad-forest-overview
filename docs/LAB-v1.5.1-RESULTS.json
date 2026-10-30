@@ -1,0 +1,285 @@
+{
+  "candidate": "Populate-ADForestOverview v1.5.1 + template v1.1.1",
+  "part1": {
+    "run-a-original-template": {
+      "checks": {
+        "normalization_console": true,
+        "normalization_evidence": true,
+        "zero_duplicate_shading_cells": true,
+        "exit_code_2": true,
+        "script_hash_unchanged": true,
+        "template_hash_unchanged": true,
+        "document_unchanged_by_validator": true,
+        "only_permitted_zoom_xsd_error": true
+      },
+      "def05_pass": true
+    },
+    "run-b-supported-live": {
+      "checks": {
+        "normalization_console": true,
+        "normalization_evidence": true,
+        "zero_duplicate_shading_cells": true,
+        "exit_code_2": true,
+        "script_hash_unchanged": true,
+        "template_hash_unchanged": true,
+        "document_unchanged_by_validator": true,
+        "full_package_xsd_zero_errors": true
+      },
+      "def05_pass": true
+    },
+    "run-b-supported-replay": {
+      "checks": {
+        "normalization_console": true,
+        "normalization_evidence": true,
+        "zero_duplicate_shading_cells": true,
+        "exit_code_2": true,
+        "script_hash_unchanged": true,
+        "template_hash_unchanged": true,
+        "document_unchanged_by_validator": true,
+        "full_package_xsd_zero_errors": true
+      },
+      "def05_pass": true
+    }
+  },
+  "part2": {
+    "presence": {
+      "generated": {
+        "5-1": true,
+        "6-1": true,
+        "6-2": false,
+        "8-1": true
+      },
+      "all_emf_parts_valid": true,
+      "manual_figure_blocks_remaining": 0,
+      "pass": false
+    },
+    "word_rendering": {
+      "status": "NOT RUN",
+      "reason": "Microsoft Word is not installed on the validation client"
+    },
+    "figure_5_1": {
+      "pass": true,
+      "domains": {
+        "ad.example.com": "EXAMPLE",
+        "child.ad.example.com": "CHILD"
+      },
+      "trusts": [
+        [
+          "ad.example.com",
+          "child.ad.example.com",
+          "Parent-child (Uplevel) | BiDirectional"
+        ]
+      ],
+      "section_5_trusts": [
+        [
+          "ad.example.com",
+          "child.ad.example.com",
+          "Parent-child (Uplevel) | BiDirectional"
+        ]
+      ]
+    },
+    "figure_6_1": {
+      "pass": true,
+      "nodes": [
+        {
+          "Id": "Default-First-Site-Name",
+          "Label": "Default-First-Site-Name | DCs: 3",
+          "Group": ""
+        }
+      ]
+    },
+    "figure_6_2": {
+      "pass": false,
+      "source": [
+        {
+          "name": "DEFAULTIPSITELINK",
+          "members": "Default-First-Site-Name",
+          "cost": "100",
+          "interval": "180"
+        }
+      ],
+      "reason": "site-link DEFAULTIPSITELINK membership/cost/interval unverified",
+      "lab_limitation": "Only one site and a one-member site link are present"
+    },
+    "figure_8_1": {
+      "pass": true,
+      "expected_ou_ids": [
+        "ad.example.com|Accounts",
+        "ad.example.com|CommVaultTest",
+        "ad.example.com|Domain Controllers",
+        "ad.example.com|Groups",
+        "ad.example.com|RSATuiLab",
+        "ad.example.com|SelfService",
+        "ad.example.com|TestUsers",
+        "child.ad.example.com|Domain Controllers"
+      ],
+      "actual_ou_ids": [
+        "ad.example.com|Accounts",
+        "ad.example.com|CommVaultTest",
+        "ad.example.com|Domain Controllers",
+        "ad.example.com|Groups",
+        "ad.example.com|RSATuiLab",
+        "ad.example.com|SelfService",
+        "ad.example.com|TestUsers",
+        "child.ad.example.com|Domain Controllers"
+      ],
+      "covered_domains": [
+        "ad.example.com",
+        "child.ad.example.com"
+      ]
+    },
+    "captions": {
+      "pass": true,
+      "checks": {
+        "5-1": true,
+        "6-1": true,
+        "6-2": true,
+        "8-1": true
+      },
+      "values": {
+        "5-1": "Figure 5-1  Logical topology - ad.example.com - Diagram version: 1.5.1 - Date: 2026-10-29 - Author: [Name]",
+        "6-1": "Figure 6-1  SCHEMATIC site map - positions are layout, not geography - Diagram version: 1.5.1 - Date: 2026-10-29",
+        "6-2": "Figure 6-2  Replication topology - site-link membership (not connection objects) - Diagram version: 1.5.1 - Date: 2026-10-29 - Design: [Hub-and-spoke / Mesh / Hybrid] - not generated - site-link DEFAULTIPSITELINK membership/cost/interval unverified",
+        "8-1": "Figure 8-1  OU structure - top level only; one model per collected domain - Diagram version: 1.5.1 - Date: 2026-10-29 - Model applies to: ad.example.com; child.ad.example.com"
+      }
+    },
+    "replay_identity": {
+      "pass": true
+    },
+    "closing_reminder": {
+      "pass": true,
+      "lines": [
+        " business purpose, risks, OU delegation, tiering,",
+        "backup tooling, Entra ID tenant fields and DC service states are human",
+        "fields by design. Check the document against the CSV/JSON evidence pack."
+      ]
+    },
+    "overall_pass": false
+  },
+  "part3": {
+    "optional_features": {
+      "pass": true,
+      "feature_count": 2,
+      "date_enabled_left_human": true
+    },
+    "fgpp": {
+      "pass": true,
+      "row_count": 2,
+      "zero_lockout_duration_cases": 0
+    },
+    "diagnostics": {
+      "pass": true,
+      "successful_empty_scopes": [
+        "child.ad.example.com",
+        "forest"
+      ],
+      "failed_sections": [
+        "KdsRootKey",
+        "gMSA"
+      ]
+    },
+    "overall_pass": true
+  },
+  "document_evidence": {
+    "run-a-original-template": {
+      "document_sha256": "df5b69eba31e27a8ac4acbe1ef33a122fc748a6d2aad116a64e532bfe6ed6b69",
+      "duplicate_shading_cell_count": 0,
+      "diagram_parts": {
+        "5-1": [
+          {
+            "part": "word/media/ad-figure-5-1-1.emf",
+            "bytes": 2088,
+            "sha256": "70bb0b91c9e3dfdb571ca930f114ee5b024f4656b2f5682ea456dad4c81ed8e2"
+          }
+        ],
+        "6-1": [
+          {
+            "part": "word/media/ad-figure-6-1-2.emf",
+            "bytes": 888,
+            "sha256": "2150100f35924873a666b66b0e31035ffa9a1b24a831004e7782e280d31016d6"
+          }
+        ],
+        "6-2": [],
+        "8-1": [
+          {
+            "part": "word/media/ad-figure-8-1-3.emf",
+            "bytes": 3268,
+            "sha256": "0325ed51c2db8e24c8deb17342c57790902172e372f3a74ad566d764fb269311"
+          },
+          {
+            "part": "word/media/ad-figure-8-1-4.emf",
+            "bytes": 3244,
+            "sha256": "7f16c5ed92397753cb1031bafc54457b77be76b50aa52af6873da670b7c645cd"
+          }
+        ]
+      }
+    },
+    "run-b-supported-live": {
+      "document_sha256": "bc72299626dcdb18fbfe4914907e1fe722ff43da18380275537b9c3d2da940c5",
+      "duplicate_shading_cell_count": 0,
+      "diagram_parts": {
+        "5-1": [
+          {
+            "part": "word/media/ad-figure-5-1-1.emf",
+            "bytes": 2088,
+            "sha256": "70bb0b91c9e3dfdb571ca930f114ee5b024f4656b2f5682ea456dad4c81ed8e2"
+          }
+        ],
+        "6-1": [
+          {
+            "part": "word/media/ad-figure-6-1-2.emf",
+            "bytes": 888,
+            "sha256": "2150100f35924873a666b66b0e31035ffa9a1b24a831004e7782e280d31016d6"
+          }
+        ],
+        "6-2": [],
+        "8-1": [
+          {
+            "part": "word/media/ad-figure-8-1-3.emf",
+            "bytes": 3268,
+            "sha256": "0325ed51c2db8e24c8deb17342c57790902172e372f3a74ad566d764fb269311"
+          },
+          {
+            "part": "word/media/ad-figure-8-1-4.emf",
+            "bytes": 3244,
+            "sha256": "7f16c5ed92397753cb1031bafc54457b77be76b50aa52af6873da670b7c645cd"
+          }
+        ]
+      }
+    },
+    "run-b-supported-replay": {
+      "document_sha256": "2c664c0cfe8e9ee00be11cd75b364f374b74a1cbe52bcb60ce3a34d2c9003f51",
+      "duplicate_shading_cell_count": 0,
+      "diagram_parts": {
+        "5-1": [
+          {
+            "part": "word/media/ad-figure-5-1-1.emf",
+            "bytes": 2088,
+            "sha256": "70bb0b91c9e3dfdb571ca930f114ee5b024f4656b2f5682ea456dad4c81ed8e2"
+          }
+        ],
+        "6-1": [
+          {
+            "part": "word/media/ad-figure-6-1-2.emf",
+            "bytes": 888,
+            "sha256": "2150100f35924873a666b66b0e31035ffa9a1b24a831004e7782e280d31016d6"
+          }
+        ],
+        "6-2": [],
+        "8-1": [
+          {
+            "part": "word/media/ad-figure-8-1-3.emf",
+            "bytes": 3268,
+            "sha256": "0325ed51c2db8e24c8deb17342c57790902172e372f3a74ad566d764fb269311"
+          },
+          {
+            "part": "word/media/ad-figure-8-1-4.emf",
+            "bytes": 3244,
+            "sha256": "7f16c5ed92397753cb1031bafc54457b77be76b50aa52af6873da670b7c645cd"
+          }
+        ]
+      }
+    }
+  },
+  "def05_regression_pass": true
+}
